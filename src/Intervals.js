@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
+import { Button, Col, Row } from 'reactstrap';
 import scriptLoader from 'react-async-script-loader'
 
 class SelectInterval extends Component {
@@ -49,10 +49,10 @@ class Intervals extends Component {
       })
       ctx.setState({onPlayBtnClick: () => { play(window.MIDI, ctx) }})
     }}/>)
-    const btn = (<a onClick={ctx.state.onPlayBtnClick}
-      className={(ctx.state.initialized ? 'btnActive' : 'btnInactive') + ' btn btn-primary'} >
+    const btn = (<Button color='primary' onClick={ctx.state.onPlayBtnClick}
+      className={(ctx.state.initialized ? 'btnActive' : 'btnInactive')} >
       Play
-      </a>)
+      </Button>)
     return (
       <div>
       <Row>
